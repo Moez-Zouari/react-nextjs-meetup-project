@@ -19,8 +19,18 @@ const DUMMY_MEETUPS = [
   },
 ];
 
-function HomePage() {
-  return <MeetupList meetups={DUMMY_MEETUPS} />;
+function HomePage(props) {
+  return <MeetupList meetups={props.meetups} />;
+}
+
+// Special Function execute avant tt seulement dans pages
+export async function getStaticProps() {
+  // Fetch Data from an API
+  return {
+    props: {
+      meetups: DUMMY_MEETUPS,
+    },
+  };
 }
 
 export default HomePage;
