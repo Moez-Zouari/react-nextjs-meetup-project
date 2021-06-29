@@ -14,7 +14,6 @@ function NewMeetupPage() {
         "Content-Type": "application/json",
       },
     });
-    console.log("Erreur");
 
     const data = await response.json();
 
